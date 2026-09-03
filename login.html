@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>เข้าสู่ระบบ | BAS SHOP</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="auth-page">
+
+<div class="auth-container">
+
+    <div class="auth-box">
+
+        <div class="auth-logo">
+            <span>BAS</span> SHOP
+        </div>
+
+        <h1>เข้าสู่ระบบ</h1>
+
+        <p class="auth-subtitle">
+            เข้าสู่บัญชีของคุณเพื่อดำเนินการต่อ
+        </p>
+
+
+        <form id="login-form">
+
+            <label>อีเมล</label>
+
+            <input
+                type="email"
+                id="login-email"
+                placeholder="example@email.com"
+                required
+            >
+
+
+            <label>รหัสผ่าน</label>
+
+            <input
+                type="password"
+                id="login-password"
+                placeholder="••••••••"
+                required
+            >
+
+
+            <button type="submit" class="auth-btn">
+                เข้าสู่ระบบ
+            </button>
+
+        </form>
+
+
+        <div id="login-message"></div>
+
+
+        <p class="auth-switch">
+            ยังไม่มีบัญชี?
+            <a href="register.html">สมัครสมาชิก</a>
+        </p>
+
+        <a href="index.html" class="back-home">
+            ← กลับหน้าสินค้า
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
