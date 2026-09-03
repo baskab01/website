@@ -1,102 +1,29 @@
+const { data, error } =
+    await supabaseClient.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+            data: {
+                username: username
+            }
+        }
+    });
 
-<!DOCTYPE html>
-<html lang="th">
+if (error) {
+    message.textContent = error.message;
+    message.style.color = "#ff1744";
+    return;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+if (!data.session) {
+    message.textContent = "สมัครสมาชิกสำเร็จ แต่ยังไม่ได้เข้าสู่ระบบ";
+    message.style.color = "#ff1744";
+    return;
+}
 
-    <title>สมัครสมาชิก | BAS SHOP</title>
+message.textContent = "สมัครสมาชิกสำเร็จ!";
+message.style.color = "#4caf50";
 
-    <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/script.js" defer></script>
-</head>
-
-<body class="auth-page">
-
-<div class="auth-container">
-
-    <div class="auth-box">
-
-        <div class="auth-logo">
-            <span>BAS</span> SHOP
-        </div>
-
-        <h1>สร้างบัญชี</h1>
-
-        <p class="auth-subtitle">
-            สมัครสมาชิกเพื่อเริ่มต้นใช้งาน BAS SHOP
-        </p>
-
-
-        <form id="register-form">
-
-            <label>ชื่อผู้ใช้</label>
-
-            <input
-                type="text"
-                id="register-username"
-                placeholder="ชื่อที่ต้องการใช้"
-                required
-            >
-
-
-            <label>อีเมล</label>
-
-            <input
-                type="email"
-                id="register-email"
-                placeholder="example@email.com"
-                required
-            >
-
-
-            <label>รหัสผ่าน</label>
-
-            <input
-                type="password"
-                id="register-password"
-                placeholder="อย่างน้อย 6 ตัวอักษร"
-                minlength="6"
-                required
-            >
-
-
-            <label>ยืนยันรหัสผ่าน</label>
-
-            <input
-                type="password"
-                id="register-confirm"
-                placeholder="กรอกรหัสผ่านอีกครั้ง"
-                minlength="6"
-                required
-            >
-
-
-            <button type="submit" class="auth-btn">
-                สมัครสมาชิก
-            </button>
-
-        </form>
-
-
-        <div id="register-message"></div>
-
-
-        <p class="auth-switch">
-            มีบัญชีอยู่แล้ว?
-            <a href="login.html">เข้าสู่ระบบ</a>
-        </p>
-
-        <a href="index.html" class="back-home">
-            ← กลับหน้าสินค้า
-        </a>
-
-    </div>
-
-</div>
-
-</body>
-</html>
+setTimeout(() => {
+    window.location.href = "index.html";
+}, 1000);
