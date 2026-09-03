@@ -1,6 +1,72 @@
-<script>
-    const SUPABASE_URL = "https://nknshstqgxvohpsxbbnm.supabase.co";
-    const SUPABASE_KEY = "sb_publishable_j_-Cwzdrdw3_SyMXpMrAtw_W0b_avAO";
-</script>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAS SHOP</title>
 
-<script src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <span>BAS</span> SHOP
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">สินค้า</a>
+        <a href="login.html">เข้าสู่ระบบ</a>
+        <a href="register.html" class="register-btn">สมัครสมาชิก</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+        <p class="small-title">WELCOME TO</p>
+
+        <h1>BAS <span>SHOP</span></h1>
+
+        <p>
+            ร้านค้าสินค้าคุณภาพดี<br>
+            ราคาพิเศษสำหรับทุกคน
+        </p>
+
+        <a href="#products" class="hero-btn">
+            ดูสินค้าทั้งหมด
+        </a>
+    </div>
+
+</section>
+
+
+<section class="products-section" id="products">
+
+    <div class="section-title">
+        <p>OUR PRODUCTS</p>
+        <h2>สินค้าของเรา</h2>
+    </div>
+
+    <div id="product-list" class="product-grid">
+
+        <div class="loading">
+            กำลังโหลดสินค้า...
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 BAS SHOP — All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
